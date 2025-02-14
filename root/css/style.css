@@ -153,6 +153,7 @@ li{
 	padding: 1.68rem 1.75rem;
 	position: relative;
 	max-width: 19.44rem;
+	background-color: #fff;
 
 	/* hover effect */
 	z-index: 1;
@@ -168,7 +169,7 @@ li::before{
 	top: 0;
 	width: 9.72rem;
 	height: 100%;
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(228, 255, 247, 0.834);;
 	transform: skewX(45deg);
 	filter: blur(40px);
 	left: -200%;
