@@ -239,7 +239,7 @@ a:active{
 	color: var(--lightblue);
 }
 
-@media (min-width: 40.43rem) {
+@media (min-width: 48rem) {
 	body {
 		transition: all 0.8s ease-in-out;
 	}
