@@ -239,7 +239,7 @@ a:active{
 	color: var(--lightblue);
 }
 
-@media (min-width: 48rem) {
+@media screen and (min-device-width: 48rem) {
 	body {
 		transition: all 0.8s ease-in-out;
 	}
@@ -279,7 +279,7 @@ a:active{
 	.card4 { grid-area: card4; }
 }
 
-@media (min-width: 68.75rem) {
+@media screen and (min-device-width: 68.75rem) {
 	body {
 		padding: 5rem 10.3rem 1rem;
 		transition: all 0.5s ease-in-out;
