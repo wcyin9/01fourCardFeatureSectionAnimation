@@ -1,0 +1,298 @@
+/* CSS RESET  */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+ul {
+	all: unset;
+	list-style: none;
+}
+
+:root{
+	--bgColor: #FAFAFA;
+	--bodyFontColor: rgba(77, 79, 98, 50%);
+	--headerColor: #4D4F62;
+	--shadow: 0 15px 30px -11px rgba(131, 166, 210, 50%);
+
+	--lightblue: #44D3D2;
+	--red: #EA5454;
+	--orange: #FCAE4A;
+	--blue: #549EF2;
+
+	/* font */
+	--lightFont: 200;
+	--regularFont: 400;
+	--semiBold: 600;
+	
+	/* mobile font size */
+	--mobileHeroSize: 1.5rem;
+	--mobileHeroLineHeight: 2.25rem;
+	--mobileHeroKerning: 0.01em;
+
+	--mobileH2Size: 1.25rem;
+	--mobileBodySize: 0.81rem;
+	--mobileHeroDesc: 0.938rem;
+
+	/* desktop font size */
+	--biggerHero: 2.25rem;
+	--biggerHeroLineHeight: 3.375rem;
+	--biggerHeroKerning: 0.016rem;
+}
+
+body {
+	background-color: var(--bgColor);
+	font-family: "Poppins", sans-serif;
+	font-weight: var(--regularFont);
+	padding: 5.31rem 2rem 1rem;
+	transition: all 0.8s ease-in-out;
+}
+
+h1{
+	color: var(--headerColor);
+	font-weight: var(--lightFont);
+	font-size: var(--mobileHeroSize);
+	line-height: var(--mobileHeroLineHeight);
+	font-kerning: var(--mobileHeroKerning);
+	margin-bottom: 1rem;
+
+	span{
+		font-weight: var(--semiBold);
+	}
+}
+
+.heroDesc { font-size: var(--mobileHeroDesc); }
+
+h2 {
+	color: var(--headerColor);
+	font-size: var(--mobileH2Size);
+	margin-bottom: 1rem;
+}
+
+p {
+	color: var(--bodyFontColor);
+	font-size: var(--mobileBodySize);
+	font-weight: var(--regularFont);
+
+	/* text wrap is changed from pretty (css reset) to unset to make it identical to the design */
+	text-wrap: unset;
+}
+
+.heroContainer {
+	margin: 0 auto;
+	text-align: center;
+	max-width: 19.44rem;
+	margin-bottom: 4.75rem;
+}
+
+/* grid style */
+.cardContainer{
+	max-width: 19.438rem;
+	margin: 0 auto 4.75rem;
+}
+
+ul{
+	display: grid;
+	gap: 1.56rem;
+}
+
+li{
+	width: 100%;
+	min-height: 13.875rem;
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+	padding: 1.68rem 1.75rem;
+	position: relative;
+	max-width: 19.44rem;
+
+	/* hover effect */
+	z-index: 1;
+	overflow: hidden;
+	transition: top 0.4s ease, box-shadow 0.3s ease;
+	top: 0;
+}
+
+/* hover effect */
+li::before{
+	position: absolute;
+	content: "";
+	top: 0;
+	width: 9.72rem;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 1);
+	transform: skewX(45deg);
+	filter: blur(40px);
+	left: -200%;
+	z-index: -1;
+	transition: left 0.6s ease;
+}
+
+li:hover::before{
+	left: 200%;
+}
+li:hover {
+	top: -10px;
+	box-shadow: 0px 15px 20px -4px rgba(131, 166, 210, 80%);
+}
+
+
+
+li::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 8px 8px 0 0;
+	width: 100%;
+	min-height: 0.22rem;
+}
+
+.card1::after{
+	background-color: var(--lightblue);
+}
+.card2::after{
+	background-color: var(--red);
+}
+.card3::after{
+	background-color: var(--orange);
+}
+.card4::after{
+	background-color: var(--blue);
+}
+
+.img {
+	margin-top: 2.06rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+}
+
+img {
+	max-width: 3.56rem;
+}
+
+footer { 
+	text-align: center;
+
+	a{
+		text-decoration: none;
+		color: #277DE0;
+		font-weight: var(--semiBold);
+	}
+}
+
+a:hover{
+	color: var(--orange);
+	transition: 0.3s ease-in-out;
+}
+a:active{
+	color: var(--lightblue);
+}
+
+@media (min-width: 40.43rem) {
+	body {
+		transition: all 0.8s ease-in-out;
+	}
+	.heroContainer {
+		max-width: 33.75rem;
+		margin-bottom: 4rem;
+	}
+
+	h1 { 
+		font-size: var(--biggerHero);
+		line-height: var(--biggerHeroLineHeight);
+		letter-spacing: var(--biggerHeroKerning);
+	}
+
+	.cardContainer {
+		max-width: 100%;
+	}
+
+	img {
+		max-width: 4rem;
+	}
+
+	ul {
+		grid-template-areas: 
+		"card1 card2"
+		"card3 card4";
+		justify-content: center;
+	}
+
+	li {
+		max-width: 21.875rem;
+		padding: 2rem 2rem;
+	}
+	.card1 { grid-area: card1; }
+	.card2 { grid-area: card2; }
+	.card3 { grid-area: card3; }
+	.card4 { grid-area: card4; }
+}
+
+@media (min-width: 68.75rem) {
+	body {
+		padding: 5rem 10.3rem 1rem;
+		transition: all 0.5s ease-in-out;
+	}
+	ul {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-areas: 
+		". card2 ."
+		"card1 card2 card4"
+		"card1 card3 card4"
+		". card3 .";
+		gap: 1.875rem;
+		max-width: 68.75rem;
+		margin: 0 auto;
+	}
+}
